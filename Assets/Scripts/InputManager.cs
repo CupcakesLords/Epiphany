@@ -16,7 +16,14 @@ public class InputManager : MonoBehaviour
     [HideInInspector]
     public Button Skill1;
     [HideInInspector]
+    public Button Ultimate;
+    [HideInInspector]
     public Image Skill1Mask;
+    [HideInInspector]
+    public Image UltimateMask;
+
+    [HideInInspector]
+    public Image HP_Bar;
 
     [HideInInspector]
     public Hero CurrentHero;
@@ -26,6 +33,10 @@ public class InputManager : MonoBehaviour
     public HeroObject CurrentData;
 
     private float SkillTimer = 0;
+    private float UltimateTimer = 0;
+    private bool onPause = false;
+
+    public GameObject Ded; //temporary
 
     private void Awake()
     {
@@ -42,7 +53,8 @@ public class InputManager : MonoBehaviour
     {
         CurrentHero = hero; CurrentTransform = trans; CurrentData = data;
         Attack.onClick.AddListener(() => hero.Auto());
-        Skill1.onClick.AddListener(() => hero.Skill()); 
+        Skill1.onClick.AddListener(() => hero.Skill());
+        Ultimate.onClick.AddListener(() => hero.Ultimate());
     }
 
     public void AttackClick()
@@ -55,8 +67,12 @@ public class InputManager : MonoBehaviour
         StartCoroutine(SkillTimerCountDown());
     }
 
+    bool SkillOnCD = false;
+
     private IEnumerator SkillTimerCountDown()
     {
+        SkillOnCD = true;
+
         float originalSize;
         originalSize = Skill1.GetComponent<RectTransform>().rect.height;
 
@@ -66,18 +82,74 @@ public class InputManager : MonoBehaviour
 
         while (SkillTimer > 0)
         {
-            SkillTimer -= Time.deltaTime;
-            Skill1Mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, originalSize * (SkillTimer/CurrentData.SkillCDR));
+            if (onPause == false)
+            {
+                SkillTimer -= Time.deltaTime;
+                Skill1Mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, originalSize * (SkillTimer / CurrentData.SkillCDR));
+            }
             yield return null;
         }
 
         SkillTimer = 0;
         Skill1Mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
         Skill1.interactable = true;
+
+        SkillOnCD = false;
     }
 
-    void Update()
+    public void UltimateClick()
     {
-        
+        StartCoroutine(UltimateTimerCountDown());
+    }
+
+    bool UltimateOnCD = false;
+
+    private IEnumerator UltimateTimerCountDown()
+    {
+        UltimateOnCD = true;
+
+        float originalSize;
+        originalSize = Ultimate.GetComponent<RectTransform>().rect.height;
+
+        UltimateTimer = CurrentData.UltimateCDR;
+        UltimateMask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, originalSize);
+        Ultimate.interactable = false;
+
+        while (UltimateTimer > 0)
+        {
+            if (onPause == false)
+            {
+                UltimateTimer -= Time.deltaTime;
+                UltimateMask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, originalSize * (UltimateTimer / CurrentData.UltimateCDR));
+            }
+            yield return null;
+        }
+
+        UltimateTimer = 0;
+        UltimateMask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
+        Ultimate.interactable = true;
+
+        UltimateOnCD = false;
+    }
+
+    public void EnableUI(bool on)
+    {
+        Attack.interactable = on;
+        if(!SkillOnCD)
+            Skill1.interactable = on;
+        if(!UltimateOnCD)
+            Ultimate.interactable = on;
+    }
+
+    public void Resurrect()
+    {
+        PauseUI(false); Ded.SetActive(false);
+        CurrentHero.Resurrect();
+    }
+
+    public void PauseUI(bool on)
+    {
+        EnableUI(!on);
+        onPause = on;
     }
 }

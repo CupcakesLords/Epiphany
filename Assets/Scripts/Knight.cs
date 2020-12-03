@@ -6,19 +6,22 @@ using UnityEngine.UI;
 
 public class Knight : MonoBehaviour, Hero
 {
-    private float moveSpeed;
-    private float AutoTimer = 0;
-    private float SkillTimer = 0;
+    [HideInInspector]
+    public float AutoTimer = 0;
+    [HideInInspector]
+    public float SkillTimer = 0;
 
     public KnightObject Data;
     public GameObject AutoHitbox;
 
     Animator animator;
 
+    Color KnightColor;
+
     private void Start()
     {
-        moveSpeed = Data.MoveSpeed;
         animator = GetComponent<Animator>();
+        KnightColor = GetComponent<SpriteRenderer>().material.color;
         InputManager.Instance.SetHero(this, transform, Data);
     }
 
@@ -40,6 +43,8 @@ public class Knight : MonoBehaviour, Hero
             {
                 foreach(Collider2D i in colliders)
                 {
+                    if (i == null)
+                        continue;
                     Siliciter a = i.GetComponent<Siliciter>();
                     if(a != null)
                         a.Die();
@@ -68,11 +73,15 @@ public class Knight : MonoBehaviour, Hero
     public void Die()
     {
         animator.Play("Base Layer.Die", 0, 0);
+        InputManager.Instance.PauseUI(true); InputManager.Instance.Ded.SetActive(true);
+        gameObject.GetComponent<Knight>().enabled = false;
+        gameObject.GetComponent<HeroHealth>().enabled = false;
+        gameObject.GetComponent<HeroMove>().enabled = false;
     }
 
     private IEnumerator SkillTimerCountDown()
     {
-        moveSpeed += 75;
+        gameObject.GetComponent<HeroMove>().moveSpeed += 75;
         SkillTimer = Data.SkillTimer;
         while (SkillTimer > 0)
         {
@@ -80,54 +89,116 @@ public class Knight : MonoBehaviour, Hero
             yield return null;
         }
         SkillTimer = 0;
-        moveSpeed -= 75;
+        gameObject.GetComponent<HeroMove>().moveSpeed -= 75;
     }
 
-    private void Update()
+    public void Ultimate() 
     {
-        if (InputManager.Instance.joystick.Horizontal == 0 || InputManager.Instance.joystick.Vertical == 0)
+        if (isInvulnerableFromDamage)
         {
-            animator.SetFloat("MoveX", AnimationConstant.IDLE);
-            animator.SetFloat("Basic", AnimationConstant.IDLE); 
-            return;
+            StopCoroutine(InvulnerableFromTakingDamage);
+            isInvulnerableFromDamage = false;
+            GetComponent<SpriteRenderer>().material.color = KnightColor;
         }
-        else
+        InputManager.Instance.UltimateClick();
+        StartCoroutine(Ult());
+    }
+
+    private IEnumerator Ult()
+    {
+        animator.Play("Base Layer.Block", 0, 0);
+        InputManager.Instance.EnableUI(false);
+     
+        gameObject.GetComponent<Knight>().enabled = false;
+        gameObject.GetComponent<HeroHealth>().enabled = false;
+        gameObject.GetComponent<HeroMove>().enabled = false;
+
+        Color temp = GetComponent<SpriteRenderer>().material.color;
+        GetComponent<SpriteRenderer>().material.color = Color.yellow;
+
+        Vector3 scaletemp = transform.localScale;
+
+        float sign = 1f; if (scaletemp.x < 0) sign = -1f;
+
+        float Timer = 1.5f;
+        while (Timer > 0)
         {
-            float Vertical = InputManager.Instance.joystick.Vertical; if (Vertical < 0) Vertical = Vertical * -1;
-            float Horizontal = InputManager.Instance.joystick.Horizontal; if (Horizontal < 0) Horizontal = Horizontal * -1;
-
-            float c = (float)Math.Sqrt(Vertical * Vertical + Horizontal * Horizontal);
-            float e = 1 - c;
-            float d = Horizontal * e / c;              // this adds to horizontal
-            float f = (float)Math.Sqrt(e * e - d * d); // this adds to vertical
-
-            if (InputManager.Instance.joystick.Horizontal < 0) d = d * -1;
-            if (InputManager.Instance.joystick.Vertical < 0) f = f * -1;
-       
-            Vector3 movement = new Vector3((InputManager.Instance.joystick.Horizontal + d) * 0.1f, (InputManager.Instance.joystick.Vertical + f) * 0.1f, 0);
-            transform.position += movement * moveSpeed * Time.deltaTime;
-
-            if (InputManager.Instance.joystick.Horizontal > 0)
-            {
-                if (transform.localScale.x < 0)
-                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            }
-            else if (InputManager.Instance.joystick.Horizontal < 0)
-            {
-                if (transform.localScale.x > 0)
-                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            }
-
-            if (moveSpeed < 100)
-            {
-                animator.SetFloat("MoveX", AnimationConstant.WALK);
-                animator.SetFloat("Basic", AnimationConstant.WALK);
-            }
-            else
-            {
-                animator.SetFloat("MoveX", AnimationConstant.RUN);
-                animator.SetFloat("Basic", AnimationConstant.RUN);
-            }
+            Timer -= Time.deltaTime;
+            transform.localScale += new Vector3(sign, 1f, 0) * Time.deltaTime * 0.3f;
+            yield return null;
         }
+
+        transform.localScale = scaletemp;
+
+        gameObject.GetComponent<Knight>().enabled = true;
+        gameObject.GetComponent<HeroHealth>().enabled = true;
+        gameObject.GetComponent<HeroMove>().enabled = true;
+
+        GetComponent<SpriteRenderer>().material.color = temp;
+
+        animator.Play("Base Layer.Idle", 0, 0);
+        InputManager.Instance.EnableUI(true);
+    }
+
+    public void TakeDamage() 
+    {
+        if(isInvulnerableFromDamage)
+        {
+            StopCoroutine(InvulnerableFromTakingDamage);
+            isInvulnerableFromDamage = false;
+        }
+        
+        InvulnerableFromTakingDamage = DamageTakenInvulnerableCountDown();
+        StartCoroutine(InvulnerableFromTakingDamage);
+        
+    }
+
+    private IEnumerator InvulnerableFromTakingDamage;
+    bool isInvulnerableFromDamage = false;
+
+    private IEnumerator DamageTakenInvulnerableCountDown()
+    {
+        isInvulnerableFromDamage = true;
+
+        gameObject.GetComponent<HeroHealth>().enabled = false;
+
+        float time = 0.5f; float interval = 0.1f;
+
+        Color[] temp = new Color[2];
+        temp[0] = GetComponent<SpriteRenderer>().material.color;
+        temp[1] = Color.red;
+
+        int times = 5; GetComponent<SpriteRenderer>().material.color = temp[times % 2];
+
+        while (time >= 0)
+        {
+            if (interval < 0.01f)
+            {
+                interval = 0.1f; 
+                times = times - 1;
+                if (times < 0)
+                    times = 0;
+                GetComponent<SpriteRenderer>().material.color = temp[times % 2]; 
+                continue;
+            }
+
+            interval -= Time.deltaTime;
+            time -= Time.deltaTime;
+            yield return null;
+        }
+
+        GetComponent<SpriteRenderer>().material.color = temp[0]; gameObject.GetComponent<HeroHealth>().enabled = true;
+
+        isInvulnerableFromDamage = false;
+    }
+
+    public void Resurrect()
+    {
+        animator.Play("Base Layer.Idle", 0, 0);
+        gameObject.GetComponent<Knight>().enabled = true;
+        gameObject.GetComponent<HeroHealth>().enabled = true;
+        gameObject.GetComponent<HeroMove>().enabled = true;
+
+        gameObject.GetComponent<HeroHealth>().HealToFull();
     }
 }

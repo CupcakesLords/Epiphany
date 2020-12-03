@@ -6,5 +6,8 @@ public interface Hero
 {
     void Auto();
     void Skill();
+    void Ultimate();
+    void TakeDamage();
     void Die();
+    void Resurrect();
 }

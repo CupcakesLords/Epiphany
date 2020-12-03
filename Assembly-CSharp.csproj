@@ -75,11 +75,19 @@
     <Compile Include="Assets\Scripts\AnimationConstant.cs" />
     <Compile Include="Assets\Scripts\CamController.cs" />
     <Compile Include="Assets\Scripts\CombatMenu.cs" />
+    <Compile Include="Assets\Scripts\DeadMenu.cs" />
+    <Compile Include="Assets\Scripts\DoDamage.cs" />
+    <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
+    <Compile Include="Assets\Scripts\HeroHealth.cs" />
+    <Compile Include="Assets\Scripts\HeroMove.cs" />
+    <Compile Include="Assets\Scripts\HPBar.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\Knight.cs" />
+    <Compile Include="Assets\Scripts\SiliciterWalk.cs" />
     <Compile Include="Assets\Scripts\TestScript\Siliciter.cs" />
     <Compile Include="Assets\Scripts\TestScript\SiliciterBullet.cs" />
+    <Compile Include="Assets\SiliciterAttack.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Truck/Unity projects/My random game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

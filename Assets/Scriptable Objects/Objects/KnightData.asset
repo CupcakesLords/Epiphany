@@ -16,5 +16,6 @@ MonoBehaviour:
   MaxManaPoints: 50
   AttackCDR: 0.5
   SkillCDR: 10
+  UltimateCDR: 15
   MoveSpeed: 75
   SkillTimer: 4

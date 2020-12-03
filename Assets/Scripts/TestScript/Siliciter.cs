@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class Siliciter : MonoBehaviour
 {
-    float ShootingTimer = 0.5f;
     public GameObject projectilePrefab;
+
+    float Change = 3f;
+    Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
-        if(ShootingTimer > 0)
+        Change -= Time.deltaTime;
+        if(Change <= 0)
         {
-            ShootingTimer -= Time.deltaTime;
-            return;
-        }
-        else {
-            Launch();
-            ShootingTimer = 1;
-        }
-    }
+            int choice = Random.Range(1, 4);
+            if (choice == 1)
+            {
+                animator.Play("Base Layer.Idle", 0, 0); 
+            }
+            else if (choice == 2)
+            {
+                animator.Play("Base Layer.Walk", 0, 0); 
+            }
+            else if (choice == 3)
+            {
+                animator.Play("Base Layer.Attack", 0, 0); 
+            }
 
-    void Launch()
-    {
-        GameObject projectileObject = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-
-        SiliciterBullet projectile = projectileObject.GetComponent<SiliciterBullet>();
-        projectile.Launch(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0), 500, 5f);
+            Change = 3f; 
+        }
     }
 
     public void Die()

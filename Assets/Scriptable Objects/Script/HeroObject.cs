@@ -8,5 +8,6 @@ public abstract class HeroObject : ScriptableObject
     public int MaxManaPoints;
     public float AttackCDR;
     public float SkillCDR;
+    public float UltimateCDR;
     public float MoveSpeed;
 }

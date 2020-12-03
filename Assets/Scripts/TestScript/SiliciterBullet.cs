@@ -3,22 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SiliciterBullet : MonoBehaviour
-{
-    //private IEnumerator MoveToCoroutine(Vector3 direction, float distance)
-    //{
-    //    float temp = (direction.x * direction.x + direction.y * direction.y) * 75f * Time.deltaTime;
-    //    float step = 0;
-
-    //    while (step < distance)
-    //    {
-    //        step += temp;
-    //        transform.position += direction * 75f * Time.deltaTime;
-    //        yield return null;
-    //    }
-
-    //    Destroy(gameObject);
-    //}
-    
+{ 
     Rigidbody2D rigidbody2d;
     float duration = -1;
 
@@ -53,9 +38,17 @@ public class SiliciterBullet : MonoBehaviour
     {
         if (collision.tag == "Enemy" || collision.tag == "Projectile" || collision.tag == "Hitbox")
             return;
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
-            InputManager.Instance.CurrentHero.Die();
+            HeroHealth temp = collision.GetComponent<HeroHealth>(); 
+            if (!temp.isActiveAndEnabled)
+            {
+                Destroy(gameObject); return;
+            }
+            if (!temp.IsDead())
+            {
+                temp.TakeDamage(gameObject.GetComponent<DoDamage>().damage);
+            }
             Destroy(gameObject);
         }
     }
