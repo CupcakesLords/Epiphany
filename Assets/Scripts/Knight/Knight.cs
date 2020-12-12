@@ -45,9 +45,9 @@ public class Knight : MonoBehaviour, Hero
                 {
                     if (i == null)
                         continue;
-                    Siliciter a = i.GetComponent<Siliciter>();
-                    if(a != null)
-                        a.Die();
+                    EnemyHealth a = i.GetComponent<EnemyHealth>();
+                    if (a != null)
+                        a.TakeDamage((int)Data.AttackDamage);
                 }
             }
         }
@@ -73,7 +73,7 @@ public class Knight : MonoBehaviour, Hero
     public void Die()
     {
         animator.Play("Base Layer.Die", 0, 0);
-        InputManager.Instance.PauseUI(true); InputManager.Instance.Ded.SetActive(true);
+        InputManager.Instance.PauseUI(true); InputManager.Instance.Ded.GetComponent<DeadMenu>().Initialize();
         gameObject.GetComponent<Knight>().enabled = false;
         gameObject.GetComponent<HeroHealth>().enabled = false;
         gameObject.GetComponent<HeroMove>().enabled = false;
@@ -82,6 +82,7 @@ public class Knight : MonoBehaviour, Hero
     private IEnumerator SkillTimerCountDown()
     {
         gameObject.GetComponent<HeroMove>().moveSpeed += 75;
+        float temp = AutoTimer; AutoTimer = 0f;
         SkillTimer = Data.SkillTimer;
         while (SkillTimer > 0)
         {
@@ -89,6 +90,7 @@ public class Knight : MonoBehaviour, Hero
             yield return null;
         }
         SkillTimer = 0;
+        AutoTimer = temp;
         gameObject.GetComponent<HeroMove>().moveSpeed -= 75;
     }
 

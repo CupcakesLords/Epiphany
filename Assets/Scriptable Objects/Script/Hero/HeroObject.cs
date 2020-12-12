@@ -10,4 +10,5 @@ public abstract class HeroObject : ScriptableObject
     public float SkillCDR;
     public float UltimateCDR;
     public float MoveSpeed;
+    public float AttackDamage;
 }

@@ -57,10 +57,10 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.53900826, y: 0.7841646}
-      - {x: 0.5580999, y: 0.012624129}
+      - {x: 0.8366292, y: -0.013902427}
       - {x: 0.96150017, y: -0.72147906}
       - {x: 1.2614906, y: -0.6271163}
-      - {x: 1.0991659, y: 0.24829666}
+      - {x: 1.4440118, y: 0.4207195}
 --- !u!1 &7973689187730271665
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2069cd1c1e26c848968dd93d824227d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoTimer: 0
+  SkillTimer: 0
   Data: {fileID: 11400000, guid: 3a519c0d49f25bd4bb034df9e620dce5, type: 2}
   AutoHitbox: {fileID: 2993188618701746372}
 --- !u!114 &2367614618651795426

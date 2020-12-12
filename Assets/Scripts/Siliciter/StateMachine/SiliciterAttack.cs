@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class SiliciterAttack : StateMachineBehaviour
 {
-    public GameObject projectilePrefab;
-    float ShootingTimer = 0.5f;
-    int Damage = 2;
-
-    Rigidbody2D body;
-    Transform player;
+    float ShootingTimer;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        body = animator.GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        ShootingTimer = animator.GetComponent<Siliciter>().AttackSpeed;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,7 +22,11 @@ public class SiliciterAttack : StateMachineBehaviour
         }
         else
         {
-            Launch();
+            Enemy enm = animator.GetComponent<Enemy>();
+            if(enm != null)
+            {
+                enm.Attack();
+            }
             ShootingTimer = 0.5f;
         }
     }
@@ -50,26 +48,4 @@ public class SiliciterAttack : StateMachineBehaviour
     {
         // Implement code that sets up animation IK (inverse kinematics)
     }
-
-    public void Launch()
-    {
-        GameObject projectileObject = Instantiate(projectilePrefab, body.position, Quaternion.identity); 
-
-        DoDamage DMG = projectileObject.GetComponent<DoDamage>();
-
-        if (DMG != null)
-        {
-            DMG.SetDamage(Damage);
-        }
-
-        SiliciterBullet projectile = projectileObject.GetComponent<SiliciterBullet>();
-
-        float x = -(body.transform.position.x - player.position.x); 
-        float y = -(body.transform.position.y - player.position.y);
-
-        Vector3 direction = new Vector3(x, y, 0);
-
-        projectile.Launch(direction, 25, 3f);
-    }
-
 }

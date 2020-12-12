@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8166447412275383778}
   - component: {fileID: 8666489002084146440}
   - component: {fileID: 2143305707286279032}
+  - component: {fileID: 5846839830839896789}
   m_Layer: 0
   m_Name: SiliciterBullet
   m_TagString: Projectile
@@ -145,3 +146,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+--- !u!114 &5846839830839896789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193891411792261176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958c5b0e224a98e4b814d48f6a0d0756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data: {fileID: 11400000, guid: 728c0d1d1f3895e44b942206204ea6f9, type: 2}
+  HealthPoint: 0
+  CurrentHealth: 0

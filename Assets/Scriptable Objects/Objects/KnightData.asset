@@ -18,4 +18,5 @@ MonoBehaviour:
   SkillCDR: 10
   UltimateCDR: 15
   MoveSpeed: 75
+  AttackDamage: 5
   SkillTimer: 4

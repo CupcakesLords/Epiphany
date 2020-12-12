@@ -2,10 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SiliciterBullet : MonoBehaviour
+public class SiliciterBullet : MonoBehaviour, Enemy
 { 
     Rigidbody2D rigidbody2d;
     float duration = -1;
+
+    public void TakeDamage()
+    {
+
+    }
+
+    public void Attack()
+    {
+
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject); 
+    }
 
     void Start()
     {

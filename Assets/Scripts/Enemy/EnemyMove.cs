@@ -59,11 +59,11 @@ public class EnemyMove : MonoBehaviour
         isMoving = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision) 
     {
-        Debug.Log("Touch something");
         if(isMoving)
         {
+            GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
             StopCoroutine(mover);
             isMoving = false;
         }

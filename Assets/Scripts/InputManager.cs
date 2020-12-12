@@ -143,7 +143,7 @@ public class InputManager : MonoBehaviour
 
     public void Resurrect()
     {
-        PauseUI(false); Ded.SetActive(false);
+        PauseUI(false); Ded.GetComponent<DeadMenu>().PopOut();
         CurrentHero.Resurrect();
     }
 
