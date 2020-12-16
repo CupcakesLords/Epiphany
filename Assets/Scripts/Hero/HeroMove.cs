@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HeroMove : MonoBehaviour
 {
-    public KnightObject Data;
+    public HeroObject Data;
 
     Animator animator;
     Rigidbody2D rigidbody2d;

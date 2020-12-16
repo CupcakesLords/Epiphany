@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scriptable Objects\Script\Enemy\SiliciterObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Script\Hero\HeroObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Script\Hero\KnightObject.cs" />
+    <Compile Include="Assets\Scriptable Objects\Script\Hero\RougeObject.cs" />
     <Compile Include="Assets\Scripts\AnimationConstant.cs" />
     <Compile Include="Assets\Scripts\CamController.cs" />
     <Compile Include="Assets\Scripts\DoDamage.cs" />
@@ -87,6 +88,8 @@
     <Compile Include="Assets\Scripts\Hero\HeroMove.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\Knight\Knight.cs" />
+    <Compile Include="Assets\Scripts\Rouge\Rouge.cs" />
+    <Compile Include="Assets\Scripts\Rouge\RougeDagger.cs" />
     <Compile Include="Assets\Scripts\Siliciter\Siliciter.cs" />
     <Compile Include="Assets\Scripts\Siliciter\SiliciterBullet.cs" />
     <Compile Include="Assets\Scripts\Siliciter\StateMachine\SiliciterAttack.cs" />

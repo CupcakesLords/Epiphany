@@ -54,7 +54,7 @@ public class InputManager : MonoBehaviour
         CurrentHero = hero; CurrentTransform = trans; CurrentData = data;
         Attack.onClick.AddListener(() => hero.Auto());
         Skill1.onClick.AddListener(() => hero.Skill());
-        Ultimate.onClick.AddListener(() => hero.Ultimate());
+        Ultimate.onClick.AddListener(() => hero.Ultimate()); 
     }
 
     public void AttackClick()
