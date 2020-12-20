@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealthPoints: 7
   MaxManaPoints: 10
-  AttackCDR: 0.5
+  AttackCDR: 1
   SkillCDR: 20
   UltimateCDR: 0
   MoveSpeed: 60

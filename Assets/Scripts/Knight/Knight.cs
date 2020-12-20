@@ -152,7 +152,6 @@ public class Knight : MonoBehaviour, Hero
         
         InvulnerableFromTakingDamage = DamageTakenInvulnerableCountDown();
         StartCoroutine(InvulnerableFromTakingDamage);
-        
     }
 
     private IEnumerator InvulnerableFromTakingDamage;

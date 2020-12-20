@@ -896,6 +896,9 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: a61ed2b0af3ebd049af57e5d68802387, type: 2}
   Projectile: {fileID: 8559190693000001418, guid: 2dbd5b99946ac1e4b8896864066a400c,
     type: 3}
+  AutoTimer: 0
+  SkillTimer: 0
+  Torso: {fileID: 1000013276720916}
 --- !u!114 &2507291898299389393
 MonoBehaviour:
   m_ObjectHideFlags: 0
