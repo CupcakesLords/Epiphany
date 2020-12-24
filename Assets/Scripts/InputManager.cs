@@ -37,6 +37,19 @@ public class InputManager : MonoBehaviour
     private bool onPause = false;
 
     public GameObject Ded; //temporary
+    public GameObject Siliciter; //temporary
+    private float timer = 10f;
+
+    private void Update() //temporary
+    {
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+            return;
+        }
+        Instantiate(Siliciter, new Vector3(0, 0, 0), Quaternion.identity);
+        timer = 10f;
+    }
 
     private void Awake()
     {
@@ -51,10 +64,32 @@ public class InputManager : MonoBehaviour
 
     public void SetHero(Hero hero, Transform trans, HeroObject data)
     {
-        CurrentHero = hero; CurrentTransform = trans; CurrentData = data;
-        Attack.onClick.AddListener(() => hero.Auto());
+        if (CurrentHero == null)
+        {
+            CurrentHero = hero; CurrentTransform = trans; CurrentData = data;
+        }
+        Attack.onClick.AddListener(() => hero.Auto()); 
         Skill1.onClick.AddListener(() => hero.Skill());
         Ultimate.onClick.AddListener(() => hero.Ultimate()); 
+    }
+
+    public void SetBackToOneHero()
+    {
+        Attack.onClick.RemoveAllListeners();
+        Skill1.onClick.RemoveAllListeners();
+        Ultimate.onClick.RemoveAllListeners();
+
+        Attack.onClick.AddListener(() => CurrentHero.Auto());
+        Skill1.onClick.AddListener(() => CurrentHero.Skill());
+        Ultimate.onClick.AddListener(() => CurrentHero.Ultimate());
+    }
+
+    public void SetBackToNoHero()
+    {
+        CurrentHero = null; CurrentTransform = null; CurrentData = null;
+        Attack.onClick.RemoveAllListeners();
+        Skill1.onClick.RemoveAllListeners();
+        Ultimate.onClick.RemoveAllListeners();
     }
 
     public void AttackClick()

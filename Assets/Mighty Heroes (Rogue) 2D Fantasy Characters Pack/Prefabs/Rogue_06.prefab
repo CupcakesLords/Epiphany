@@ -898,7 +898,7 @@ MonoBehaviour:
     type: 3}
   AutoTimer: 0
   SkillTimer: 0
-  Torso: {fileID: 1000013276720916}
+  Torso: {fileID: 1000011360321256}
 --- !u!114 &2507291898299389393
 MonoBehaviour:
   m_ObjectHideFlags: 0

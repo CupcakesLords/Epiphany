@@ -78,7 +78,7 @@ public class Rouge : MonoBehaviour, Hero
 
                 Vector3 direction = new Vector3(InputManager.Instance.joystick.Horizontal + d, InputManager.Instance.joystick.Vertical + f, 0);
 
-                projectile.Launch(direction * 2f, 100, 3f);
+                projectile.Launch(direction * 5, 300f, 1f);
             }
         }
     }
@@ -115,7 +115,35 @@ public class Rouge : MonoBehaviour, Hero
 
     public void Skill()
     {
-        
+        InputManager.Instance.SkillClick();
+        StartCoroutine(SkillTimerCountDown());
+    }
+
+    private IEnumerator SkillTimerCountDown()
+    {
+        Vector3 spawn = transform.position;
+        float Timer = 2f;
+        while (Timer > 0)
+        {
+            Timer -= Time.deltaTime;
+            yield return null;
+        }
+
+        GameObject clone = Instantiate(gameObject, spawn, Quaternion.identity);
+        Rouge r = clone.GetComponent<Rouge>();
+        clone.GetComponent<HeroHealth>().enabled = false;
+        r.Torso.GetComponent<SpriteRenderer>().material.color = Color.clear;
+
+        SkillTimer = Data.SkillTimer;
+        while (SkillTimer > 0)
+        {
+            SkillTimer -= Time.deltaTime;
+            yield return null;
+        }
+        SkillTimer = 0;
+
+        Destroy(clone);
+        InputManager.Instance.SetBackToOneHero();
     }
 
     public void TakeDamage()
@@ -172,6 +200,12 @@ public class Rouge : MonoBehaviour, Hero
 
     public void Ultimate()
     {
-        
+        GameObject[] heros = GameObject.FindGameObjectsWithTag("Player"); 
+        if (heros.Length != 2)
+            return;
+
+        Vector3 pos0 = heros[0].transform.position;
+        heros[0].GetComponent<Rigidbody2D>().MovePosition(heros[1].transform.position);
+        heros[1].GetComponent<Rigidbody2D>().MovePosition(pos0);
     }
 }

@@ -17,6 +17,10 @@ public class RougeDagger : MonoBehaviour
     {
         if (duration > 0)
         {
+            var rotationVector = transform.rotation.eulerAngles;
+            rotationVector.z += 5;
+            transform.rotation = Quaternion.Euler(rotationVector);
+
             duration -= Time.deltaTime;
             if (duration <= 0)
             {
@@ -27,44 +31,12 @@ public class RougeDagger : MonoBehaviour
 
     public void Launch(Vector3 Direction, float distance, float time)
     {
-        //rotation calculation
-        float x = Direction.x;
-        float y = Direction.y;
-        if (y == 0)
-        {
-            if (x >= 0)
-            {
-                var rotationVector = transform.rotation.eulerAngles;
-                rotationVector.z = -90f; 
-                transform.rotation = Quaternion.Euler(rotationVector);
-            }
-            else
-            {
-                var rotationVector = transform.rotation.eulerAngles;
-                rotationVector.z = +90f; 
-                transform.rotation = Quaternion.Euler(rotationVector);
-            }
-        }
-        else
-        {
-            float z = x / y;
-            {
-                float pi = (float)Math.Atan(z);
-                float euler = pi * 180f / 3.14f;
-
-                var rotationVector = transform.rotation.eulerAngles;
-                rotationVector.z = euler - 90f;
-                transform.rotation = Quaternion.Euler(rotationVector);
-            }
-        }
-        //
-
         duration = time;
         if (rigidbody2d == null)
         {
             rigidbody2d = GetComponent<Rigidbody2D>();
         }
-        rigidbody2d.AddForce(Direction * distance);
+        rigidbody2d.AddForce(Direction * 300f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
