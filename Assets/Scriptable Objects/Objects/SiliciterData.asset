@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackCDR: 0.1
   Damage: 2
-  MaxHealthPoint: 2
+  MaxHealthPoint: 4

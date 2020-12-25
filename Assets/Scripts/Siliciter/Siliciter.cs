@@ -52,7 +52,53 @@ public class Siliciter : MonoBehaviour, Enemy
 
     public void TakeDamage()
     {
+        if (isInvulnerableFromDamage)
+        {
+            StopCoroutine(InvulnerableFromTakingDamage);
+            isInvulnerableFromDamage = false;
+        }
 
+        InvulnerableFromTakingDamage = DamageTakenInvulnerableCountDown();
+        StartCoroutine(InvulnerableFromTakingDamage);
+    }
+
+    private IEnumerator InvulnerableFromTakingDamage;
+    bool isInvulnerableFromDamage = false;
+
+    private IEnumerator DamageTakenInvulnerableCountDown()
+    {
+        isInvulnerableFromDamage = true;
+
+        gameObject.GetComponent<EnemyHealth>().enabled = false;
+
+        float time = 0.5f; float interval = 0.1f;
+
+        Color[] temp = new Color[2];
+        temp[0] = GetComponent<SpriteRenderer>().material.color;
+        temp[1] = Color.red;
+
+        int times = 5; GetComponent<SpriteRenderer>().material.color = temp[times % 2];
+
+        while (time >= 0)
+        {
+            if (interval < 0.01f)
+            {
+                interval = 0.1f;
+                times = times - 1;
+                if (times < 0)
+                    times = 0;
+                GetComponent<SpriteRenderer>().material.color = temp[times % 2];
+                continue;
+            }
+
+            interval -= Time.deltaTime;
+            time -= Time.deltaTime;
+            yield return null;
+        }
+
+        GetComponent<SpriteRenderer>().material.color = temp[0]; gameObject.GetComponent<EnemyHealth>().enabled = true;
+
+        isInvulnerableFromDamage = false;
     }
 
     public void Die()

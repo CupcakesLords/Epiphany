@@ -7,6 +7,7 @@ public class RougeDagger : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
     float duration = -1;
+    bool spin = true;
 
     void Start()
     {
@@ -17,10 +18,12 @@ public class RougeDagger : MonoBehaviour
     {
         if (duration > 0)
         {
-            var rotationVector = transform.rotation.eulerAngles;
-            rotationVector.z += 5;
-            transform.rotation = Quaternion.Euler(rotationVector);
-
+            if (spin)
+            {
+                var rotationVector = transform.rotation.eulerAngles;
+                rotationVector.z += 5;
+                transform.rotation = Quaternion.Euler(rotationVector);
+            }
             duration -= Time.deltaTime;
             if (duration <= 0)
             {
@@ -49,6 +52,12 @@ public class RougeDagger : MonoBehaviour
             if (a != null)
                 a.TakeDamage(gameObject.GetComponent<DoDamage>().damage);
             Destroy(gameObject);
+        }
+        else
+        {
+            rigidbody2d.velocity = Vector3.zero;
+            rigidbody2d.angularVelocity = 0f;
+            spin = false;
         }
     }
 }

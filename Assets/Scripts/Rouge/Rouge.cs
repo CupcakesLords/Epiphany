@@ -9,6 +9,7 @@ public class Rouge : MonoBehaviour, Hero
     public RougeObject Data;
 
     public GameObject Projectile;
+    public GameObject RougePrefab;
 
     Animator animator;
     Rigidbody2D body;
@@ -36,7 +37,7 @@ public class Rouge : MonoBehaviour, Hero
             StartCoroutine(AutoTimerCountDown());
             animator.Play("Base Layer.Rogue_attack_02", 0, 0);
 
-            Vector3 position = new Vector3(body.position.x, body.position.y + 0.5f, 0);
+            Vector3 position = new Vector3(body.position.x, body.position.y + 0.25f, 0);
             GameObject projectileObject = Instantiate(Projectile, position, Quaternion.identity);
 
             DoDamage DMG = projectileObject.GetComponent<DoDamage>();
@@ -78,7 +79,7 @@ public class Rouge : MonoBehaviour, Hero
 
                 Vector3 direction = new Vector3(InputManager.Instance.joystick.Horizontal + d, InputManager.Instance.joystick.Vertical + f, 0);
 
-                projectile.Launch(direction * 5, 300f, 1f);
+                projectile.Launch(direction * 2f, 100, 3f);
             }
         }
     }
@@ -129,10 +130,11 @@ public class Rouge : MonoBehaviour, Hero
             yield return null;
         }
 
-        GameObject clone = Instantiate(gameObject, spawn, Quaternion.identity);
+        GameObject clone = Instantiate(RougePrefab, spawn, Quaternion.identity);
         Rouge r = clone.GetComponent<Rouge>();
         clone.GetComponent<HeroHealth>().enabled = false;
         r.Torso.GetComponent<SpriteRenderer>().material.color = Color.clear;
+        r.AutoTimer = 0;
 
         SkillTimer = Data.SkillTimer;
         while (SkillTimer > 0)
@@ -204,8 +206,21 @@ public class Rouge : MonoBehaviour, Hero
         if (heros.Length != 2)
             return;
 
-        Vector3 pos0 = heros[0].transform.position;
-        heros[0].GetComponent<Rigidbody2D>().MovePosition(heros[1].transform.position);
-        heros[1].GetComponent<Rigidbody2D>().MovePosition(pos0);
+        //Vector3 pos0 = heros[0].transform.position;
+        //heros[0].GetComponent<Rigidbody2D>().MovePosition(heros[1].transform.position);
+        //heros[1].GetComponent<Rigidbody2D>().MovePosition(pos0);
+
+        GetComponent<HeroMove>().enabled = false;
+
+        if(heros[0] == gameObject)
+        {
+            heros[0].GetComponent<Rigidbody2D>().MovePosition(heros[1].transform.position);
+        }
+        else if(heros[1] == gameObject)
+        {
+            heros[1].GetComponent<Rigidbody2D>().MovePosition(heros[0].transform.position);
+        }
+
+        GetComponent<HeroMove>().enabled = true;
     }
 }
