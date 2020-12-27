@@ -10,6 +10,7 @@ public class Rouge : MonoBehaviour, Hero
 
     public GameObject Projectile;
     public GameObject RougePrefab;
+    public GameObject RougeShadow;
 
     Animator animator;
     Rigidbody2D body;
@@ -123,12 +124,18 @@ public class Rouge : MonoBehaviour, Hero
     private IEnumerator SkillTimerCountDown()
     {
         Vector3 spawn = transform.position;
+        Vector3 spawnshadow = new Vector3(spawn.x, spawn.y + 0.6f, spawn.z);
+
+        GameObject shadow = Instantiate(RougeShadow, spawnshadow, Quaternion.identity);
+
         float Timer = 2f;
         while (Timer > 0)
         {
             Timer -= Time.deltaTime;
             yield return null;
         }
+
+        Destroy(shadow);
 
         GameObject clone = Instantiate(RougePrefab, spawn, Quaternion.identity);
         Rouge r = clone.GetComponent<Rouge>();

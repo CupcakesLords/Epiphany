@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/PC/Desktop/Random2.4.apk
+C:/Users/PC/Desktop/Random2.5.apk
 SceneListBegin?
 Assets/Scenes/Scene.unity
 SceneListEnd?
@@ -59,6 +59,8 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 d3c76b14a25eebd3a3323dd43297919c Unity.TextMeshPro.dll:TMPro.TMP_InputField
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.EnemyMove
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 507174d46dacbc5fe45e28485db5dd1e UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -173,7 +175,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 528e9858840cb8370d93939fff6b42d9 Assembly-CSharp.dll:.JoystickPlayerExample
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 a064ddaf8f981efc803a1fc5f62ef4f0 Assembly-CSharp.dll:.CamController
-cca7529efd40e2cffae7b7df70af6b0d Assembly-CSharp.dll:.Rouge
+4f7daa113c2334387e84d22c51e83240 Assembly-CSharp.dll:.Rouge
 89f892c5a26f645090758bc8e68f90cd Assembly-CSharp.dll:.CombatMenu
 f09455f3352dd0d16107d009d791d02a Assembly-CSharp.dll:.HeroMove
 ce8738a9c55aaa36e0e53ce1264c19a9 Assembly-CSharp.dll:.HeroHealth

@@ -897,6 +897,8 @@ MonoBehaviour:
   Projectile: {fileID: 8559190693000001418, guid: 2dbd5b99946ac1e4b8896864066a400c,
     type: 3}
   RougePrefab: {fileID: 1000011821036864}
+  RougeShadow: {fileID: 1646608225305230978, guid: 6199bc8b90f9834488c51b8e68705aaa,
+    type: 3}
   AutoTimer: 0
   SkillTimer: 0
   Torso: {fileID: 1000011360321256}
