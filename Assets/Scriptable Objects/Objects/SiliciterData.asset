@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a30721cde32454ea667be852b50d01, type: 3}
   m_Name: SiliciterData
   m_EditorClassIdentifier: 
-  AttackCDR: 0.1
+  AttackCDR: 0.75
   Damage: 2
   MaxHealthPoint: 4

@@ -47,7 +47,7 @@ public class InputManager : MonoBehaviour
             timer -= Time.deltaTime;
             return;
         }
-        Instantiate(Siliciter, new Vector3(0, 0, 0), Quaternion.identity);
+        //Instantiate(Siliciter, new Vector3(0, 0, 0), Quaternion.identity);
         timer = 10f;
     }
 

@@ -15,6 +15,33 @@ public class EnemyMove : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
+    public void SetMoving(bool move)
+    {
+        isMoving = move;
+    }
+
+    public void FollowPlayer()
+    {
+        float step = Time.deltaTime; 
+        Transform player;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (player != null)
+        {
+            if(Mathf.Sqrt(Mathf.Pow(player.position.x - transform.position.x, 2) + Mathf.Pow(player.position.y - transform.position.y, 2)) > 2)
+                transform.position = Vector3.MoveTowards(transform.position, player.position, step);
+            if (player.position.x - transform.position.x >= 0) // go to the left side
+            {
+                if (transform.localScale.x > 0) // facing right
+                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            }
+            else //go to the right side
+            {
+                if (transform.localScale.x < 0) // facing left
+                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            }
+        }
+    }
+
     public void IntervalWalk()
     {
         if(isMoving)
