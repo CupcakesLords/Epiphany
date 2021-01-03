@@ -21,6 +21,8 @@ public class InputManager : MonoBehaviour
     public Image Skill1Mask;
     [HideInInspector]
     public Image UltimateMask;
+    [HideInInspector]
+    public GameObject Interaction;
 
     [HideInInspector]
     public Image HP_Bar;

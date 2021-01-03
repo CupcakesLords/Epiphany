@@ -12,6 +12,7 @@ public class CombatMenu : MonoBehaviour
     public Image SkillMask;
     public Image UltimateMask;
     public Image HPBar;
+    public GameObject Interaction;
 
     void Start()
     {
@@ -22,5 +23,6 @@ public class CombatMenu : MonoBehaviour
         InputManager.Instance.UltimateMask = UltimateMask;
         InputManager.Instance.HP_Bar = HPBar;
         InputManager.Instance.Ultimate = Ult;
+        InputManager.Instance.Interaction = Interaction;
     }
 }

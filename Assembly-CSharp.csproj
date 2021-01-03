@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Animation\Explosion\Explode.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMove.cs" />
+    <Compile Include="Assets\Scripts\Fox.cs" />
     <Compile Include="Assets\Scripts\Hero\Hero.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroHealth.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroMove.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="Assets\Scripts\Rouge\RougeDagger.cs" />
     <Compile Include="Assets\Scripts\Siliciter\Siliciter.cs" />
     <Compile Include="Assets\Scripts\Siliciter\SiliciterBullet.cs" />
+    <Compile Include="Assets\Scripts\Siliciter\SiliciterBulletDie.cs" />
     <Compile Include="Assets\Scripts\Siliciter\StateMachine\SiliciterAttack.cs" />
     <Compile Include="Assets\Scripts\Siliciter\StateMachine\SiliciterDie.cs" />
     <Compile Include="Assets\Scripts\Siliciter\StateMachine\SiliciterWalk.cs" />

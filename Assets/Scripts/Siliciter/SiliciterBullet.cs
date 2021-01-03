@@ -7,6 +7,16 @@ public class SiliciterBullet : MonoBehaviour, Enemy
     Rigidbody2D rigidbody2d;
     float duration = -1;
 
+    Animator animator;
+
+    public GameObject Explosion;
+
+    public void OnDestruction()
+    {
+        Destroy(gameObject);
+        Instantiate(Explosion, transform.position, Quaternion.identity);
+    }
+
     public void TakeDamage()
     {
 
@@ -19,12 +29,12 @@ public class SiliciterBullet : MonoBehaviour, Enemy
 
     public void Die()
     {
-        Destroy(gameObject); 
+        OnDestruction();
     }
 
     void Start()
     {
-        rigidbody2d = GetComponent<Rigidbody2D>(); 
+        rigidbody2d = GetComponent<Rigidbody2D>(); animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -34,7 +44,7 @@ public class SiliciterBullet : MonoBehaviour, Enemy
             duration -= Time.deltaTime;
             if(duration <= 0)
             {
-                Destroy(gameObject);
+                OnDestruction();
             }
         }
     }
@@ -55,16 +65,21 @@ public class SiliciterBullet : MonoBehaviour, Enemy
             return;
         if (collision.tag == "Player")
         {
-            HeroHealth temp = collision.GetComponent<HeroHealth>(); 
+            HeroHealth temp = collision.GetComponent<HeroHealth>();
             if (!temp.isActiveAndEnabled)
             {
-                Destroy(gameObject); return;
+                OnDestruction();
+                return;
             }
             if (!temp.IsDead())
             {
                 temp.TakeDamage(gameObject.GetComponent<DoDamage>().damage);
             }
-            Destroy(gameObject);
+            OnDestruction();
+        }
+        else
+        {
+            OnDestruction();
         }
     }
 }

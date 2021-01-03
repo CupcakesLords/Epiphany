@@ -12,16 +12,24 @@ public class AerigelOrbit : MonoBehaviour
 
     Rigidbody2D rigidbody2d;
 
-    
+    public float speed;
 
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - Center.transform.position.x, 2) + Mathf.Pow(transform.position.y - Center.transform.position.y, 2)); 
+        distance = Mathf.Sqrt(Mathf.Pow(transform.position.x - Center.transform.position.x, 2) + Mathf.Pow(transform.position.y - Center.transform.position.y, 2));
+        speed = 100 * Time.deltaTime;
+    }
+
+    public void StartExpanding()
+    {
+        speed += 0.1f * Time.deltaTime;
     }
 
     public void ExpandOrbit()
     {
+        StartExpanding();
+
         float x = transform.position.x - Center.transform.position.x;
         float y = transform.position.y - Center.transform.position.y;
         if (x >= 0)
@@ -45,7 +53,7 @@ public class AerigelOrbit : MonoBehaviour
         }
 
         ReturnProtocol = Return();
-        StartCoroutine(ReturnProtocol);
+        StartCoroutine(ReturnProtocol); speed = 100 * Time.deltaTime;
     }
 
     bool IsReturning = false;
@@ -74,7 +82,7 @@ public class AerigelOrbit : MonoBehaviour
             return;
    
         Vector3 axis = new Vector3(0, 0, 1);
-        transform.RotateAround(Center.transform.position, axis, 100 * Time.deltaTime);
+        transform.RotateAround(Center.transform.position, axis, speed);
         
         var rotationVector = transform.rotation.eulerAngles;
         rotationVector.z += 5;
