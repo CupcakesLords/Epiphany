@@ -91,7 +91,10 @@ public class EnemyMove : MonoBehaviour
         if(isMoving)
         {
             GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
-            StopCoroutine(mover);
+            if (mover != null)
+            {
+                StopCoroutine(mover);
+            }
             isMoving = false;
         }
     }

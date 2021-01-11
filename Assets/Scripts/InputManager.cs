@@ -40,6 +40,7 @@ public class InputManager : MonoBehaviour
 
     public GameObject Ded; //temporary
     public GameObject Siliciter; //temporary
+    public GameObject Dialog; //temporary
     private float timer = 10f;
 
     private void Update() //temporary

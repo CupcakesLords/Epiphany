@@ -15,6 +15,8 @@ public class Aerigel : MonoBehaviour, Enemy
     float Change = 3f;
     int preChoice = 0;
 
+    public GameObject temp;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -83,9 +85,10 @@ public class Aerigel : MonoBehaviour, Enemy
 
     public void StopAttacking()
     {
-        AerigelOrbit a = satellite0.GetComponent<AerigelOrbit>(); a.BackToOrbit(); 
-        a = satellite1.GetComponent<AerigelOrbit>(); a.BackToOrbit();
-        a = satellite2.GetComponent<AerigelOrbit>(); a.BackToOrbit();
+        AerigelOrbit a;
+        if (!(!satellite0)) { a = satellite0.GetComponent<AerigelOrbit>(); if (!(!a)) { a.BackToOrbit(); } }
+        if (!(!satellite1)) { a = satellite1.GetComponent<AerigelOrbit>(); if (!(!a)) { a.BackToOrbit(); } }
+        if (!(!satellite2)) { a = satellite2.GetComponent<AerigelOrbit>(); if (!(!a)) { a.BackToOrbit(); } }
     }
 
     public void Die()
@@ -146,5 +149,14 @@ public class Aerigel : MonoBehaviour, Enemy
         GetComponent<SpriteRenderer>().material.color = temp[0]; gameObject.GetComponent<EnemyHealth>().enabled = true;
 
         isInvulnerableFromDamage = false;
+    }
+
+    public void OnDeadDropLoot()
+    {
+        int rand = Random.Range(1, 10);
+        if (rand > 5)
+        {
+            GameObject drop = Instantiate(temp, transform.position, Quaternion.identity);
+        }
     }
 }

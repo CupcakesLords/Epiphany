@@ -19,6 +19,11 @@ public class AerigelDie : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Aerigel a = animator.GetComponent<Aerigel>();
+        if(a != null)
+        {
+            a.OnDeadDropLoot();
+        }
         Destroy(animator.gameObject);
     }
 

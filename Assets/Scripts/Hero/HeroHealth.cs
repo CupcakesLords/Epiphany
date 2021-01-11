@@ -32,6 +32,14 @@ public class HeroHealth : MonoBehaviour
         InputManager.Instance.HP_Bar.GetComponent<HPBar>().SetHealth(CurrentHealth, HealthPoint);
     }
 
+    public void Heal(int amount)
+    {
+        CurrentHealth += amount;
+        if (CurrentHealth > HealthPoint)
+            CurrentHealth = HealthPoint;
+        InputManager.Instance.HP_Bar.GetComponent<HPBar>().SetHealth(CurrentHealth, HealthPoint);
+    }
+
     public void HealToFull()
     {
         CurrentHealth = HealthPoint;

@@ -72,6 +72,8 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\NeonShapes\SelfDestroyScript.cs" />
+    <Compile Include="Assets\Scriptable Objects\Script\Dialog\DialogObject.cs" />
+    <Compile Include="Assets\Scriptable Objects\Script\Dialog\FoxDialogObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Script\Enemy\AerigelObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Script\Enemy\EnemyObject.cs" />
     <Compile Include="Assets\Scriptable Objects\Script\Enemy\SiliciterBulletObject.cs" />
@@ -87,7 +89,9 @@
     <Compile Include="Assets\Scripts\Aerigel\StateMachine\AerigelWalk.cs" />
     <Compile Include="Assets\Scripts\AnimationConstant.cs" />
     <Compile Include="Assets\Scripts\CamController.cs" />
+    <Compile Include="Assets\Scripts\Cherry.cs" />
     <Compile Include="Assets\Scripts\DoDamage.cs" />
+    <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
@@ -98,8 +102,10 @@
     <Compile Include="Assets\Scripts\Hero\HeroMove.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\Knight\Knight.cs" />
+    <Compile Include="Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Scripts\Rouge\Rouge.cs" />
     <Compile Include="Assets\Scripts\Rouge\RougeDagger.cs" />
+    <Compile Include="Assets\Scripts\RougeNPC.cs" />
     <Compile Include="Assets\Scripts\Siliciter\Siliciter.cs" />
     <Compile Include="Assets\Scripts\Siliciter\SiliciterBullet.cs" />
     <Compile Include="Assets\Scripts\Siliciter\SiliciterBulletDie.cs" />
@@ -108,6 +114,7 @@
     <Compile Include="Assets\Scripts\Siliciter\StateMachine\SiliciterWalk.cs" />
     <Compile Include="Assets\Scripts\UI\CombatMenu.cs" />
     <Compile Include="Assets\Scripts\UI\DeadMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\DialogMenu.cs" />
     <Compile Include="Assets\Scripts\UI\HPBar.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Truck/Unity projects/My random game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

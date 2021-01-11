@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6eaf622d5e8df4c8433568d2a66b17, type: 3}
+  m_Name: FoxDialogObject (1)
+  m_EditorClassIdentifier: 
+  Dialog:
+  - Be careful chosen!
+  - You are about to enter a trap room.
+  - Once you pass the stone platform ahead, it will close and trap you in.
+  - The witch you spawn monsters inside to defeat you.
+  - That is how she stops rebellion from dethroning her.
+  - Once you kill all the monster, the trap will disappear.
+  - One more thing!
+  - Killing monster can give you item.
+  - When you stay in range with an interactable object, a button will appear.
+  - Click the button to see what it does!

@@ -7,4 +7,5 @@ public interface Enemy
     void Attack();
     void Die();
     void TakeDamage();
+    void OnDeadDropLoot();
 }

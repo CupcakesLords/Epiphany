@@ -12,6 +12,8 @@ public class Siliciter : MonoBehaviour, Enemy
     [HideInInspector]
     public float AttackSpeed;
 
+    public GameObject temp;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -106,5 +108,14 @@ public class Siliciter : MonoBehaviour, Enemy
         animator.Play("Base Layer.Die", 0, 0);
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<Siliciter>().enabled = false;
+    }
+
+    public void OnDeadDropLoot()
+    {
+        int rand = Random.Range(1, 10);
+        if (rand > 5)
+        {
+            GameObject drop = Instantiate(temp, transform.position, Quaternion.identity);
+        }
     }
 }

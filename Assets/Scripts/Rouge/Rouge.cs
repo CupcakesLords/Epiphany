@@ -98,7 +98,7 @@ public class Rouge : MonoBehaviour, Hero
 
     public void Die()
     {
-        animator.Play("Base Layer.Rogue_death_01", 0, 0);
+        animator.Play("Base Layer.Die", 0, 0);
         InputManager.Instance.PauseUI(true); InputManager.Instance.Ded.GetComponent<DeadMenu>().Initialize();
         gameObject.GetComponent<Rouge>().enabled = false;
         gameObject.GetComponent<HeroHealth>().enabled = false;
@@ -229,5 +229,10 @@ public class Rouge : MonoBehaviour, Hero
         }
 
         GetComponent<HeroMove>().enabled = true;
+    }
+
+    public string ReturnName()
+    {
+        return "Rouge";
     }
 }

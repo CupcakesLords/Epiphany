@@ -11,6 +11,11 @@ public class SiliciterBullet : MonoBehaviour, Enemy
 
     public GameObject Explosion;
 
+    public void OnDeadDropLoot()
+    {
+
+    }
+
     public void OnDestruction()
     {
         Destroy(gameObject);
@@ -61,7 +66,7 @@ public class SiliciterBullet : MonoBehaviour, Enemy
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy" || collision.tag == "Projectile" || collision.tag == "Hitbox")
+        if (collision.tag == "Enemy" || collision.tag == "Projectile" || collision.tag == "Hitbox" || collision.tag == "Drop")
             return;
         if (collision.tag == "Player")
         {

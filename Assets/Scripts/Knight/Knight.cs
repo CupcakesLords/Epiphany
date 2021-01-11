@@ -202,4 +202,9 @@ public class Knight : MonoBehaviour, Hero
 
         gameObject.GetComponent<HeroHealth>().HealToFull();
     }
+
+    public string ReturnName()
+    {
+        return "Knight";
+    }
 }

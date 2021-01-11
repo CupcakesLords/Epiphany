@@ -10,4 +10,5 @@ public interface Hero
     void TakeDamage();
     void Die();
     void Resurrect();
+    string ReturnName();
 }

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6eaf622d5e8df4c8433568d2a66b17, type: 3}
+  m_Name: FoxDialogObject
+  m_EditorClassIdentifier: 
+  Dialog:
+  - '*Gasp*'
+  - Hello stranger, I'm just a magical fox who lives in this forest.
+  - Last night, I had an epiphany.
+  - That someone unusual would come to this place.
+  - And save us.
+  - From what, you may wonder?
+  - For thousands of years, this kingdom had been living in peace.
+  - Until one day, the witch of darkness showed up.
+  - She destroyed the royal army and took over the king.
+  - Ever since, her magic has been constantly spreading and plunging everything in
+    darkness.
+  - This forest is one of the last places that have yet to be infected.
+  - Thanks to the ancient magical power of the spirit of the forest.
+  - But the witches' monsters are destroying the forest, weakening the spirit.
+  - So you can see the darkness is slowing seeping at the edge of the forest.
+  - So, the chosen one. Can you help us?
+  - Here's a few tips to help you.
+  - At the top left of the screen is your health bar. It indicates the amount of health
+    you have.
+  - If you run out of health, you will die. But don't worry, killing monsters can
+    drop health potion.
+  - Next, at the bottom left of the screen lies a joystick that helps you in any direction
+    you point to.
+  - 'A chosen has three action: Attack(A), Skill(S), Ultimate(S). They vary among
+    chosens.'
+  - Attack is the basic way of attacking. It doesn't cost mana. But it has a timer
+    between attacks.
+  - You need to wait until the timer depletes to attack again.
+  - Skill and Ultimate are two special skills that make one a chosen.
+  - They also have a cooldown between usage, but the cooldown is much longer than
+    attacks' timer.
+  - And they cost mana to use.
+  - That's all you need to know by now. Now embark, chosen!

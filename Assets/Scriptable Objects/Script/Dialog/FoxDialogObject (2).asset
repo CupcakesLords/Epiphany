@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6eaf622d5e8df4c8433568d2a66b17, type: 3}
+  m_Name: FoxDialogObject (2)
+  m_EditorClassIdentifier: 
+  Dialog:
+  - Hello chosen, again
+  - You are about to enter the part of the forest where darkness prevails
+  - In these area, monster will spawn more and be more deadly
+  - So be careful!
+  - But you can also find a lot more, in the dark ;)
