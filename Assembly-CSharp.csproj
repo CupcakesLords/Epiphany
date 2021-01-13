@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\Fox.cs" />
+    <Compile Include="Assets\Scripts\Gate.cs" />
     <Compile Include="Assets\Scripts\Hero\Hero.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroHealth.cs" />
     <Compile Include="Assets\Scripts\Hero\HeroMove.cs" />
@@ -112,10 +113,12 @@
     <Compile Include="Assets\Scripts\Siliciter\StateMachine\SiliciterAttack.cs" />
     <Compile Include="Assets\Scripts\Siliciter\StateMachine\SiliciterDie.cs" />
     <Compile Include="Assets\Scripts\Siliciter\StateMachine\SiliciterWalk.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UI\CombatMenu.cs" />
     <Compile Include="Assets\Scripts\UI\DeadMenu.cs" />
     <Compile Include="Assets\Scripts\UI\DialogMenu.cs" />
     <Compile Include="Assets\Scripts\UI\HPBar.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Truck/Unity projects/My random game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

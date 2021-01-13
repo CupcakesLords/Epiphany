@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/PC/Desktop/Random2.6.apk
+C:/Users/PC/Desktop/Random3.1.apk
 SceneListBegin?
 Assets/Scenes/Scene.unity
 SceneListEnd?
@@ -109,6 +109,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 4e9333594897a1fb8b136ad2eae996c7 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
+60038c9223182ddc323124aea5f24b87 Assembly-CSharp.dll:.RougeNPC
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -202,4 +203,6 @@ adcda4f136de13df9a82023a2a50f223 Assembly-CSharp.dll:.Siliciter
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RougeDagger
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SiliciterAttack
 270b69eb3006143f2ccc89d669129e45 Assembly-CSharp.dll:.AerigelOrbit
-60038c9223182ddc323124aea5f24b87 Assembly-CSharp.dll:.RougeNPC
+e6c1f107f046d179de7059d5321f55a3 Assembly-CSharp.dll:.MainMenu
+bfcf1476af81b7496bc002437c68d848 Assembly-CSharp.dll:.Gate
+dd13c6258d76e712ebc15509f0314680 Assembly-CSharp.dll:.SoundManager

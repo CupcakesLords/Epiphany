@@ -94,6 +94,17 @@ public class Room : MonoBehaviour
 
         CreateEnemies();
 
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            Transform temp = players[i].transform;
+            if (!(temp.position.x > left && temp.position.x < right && temp.position.y < up && temp.position.y > down))
+            {
+                players[i].transform.position = new Vector3(left + ((right - left) / 2), down + ((up - down) / 2) + i, 0);
+            }
+        }
+
         isActive = true;
     }
 

@@ -21,8 +21,7 @@ public class RougeNPC : MonoBehaviour
     {
         if (collision.tag != "Player")
             return;
-        //if (collision.GetComponent<Rouge>() != null) //if rouge return
-        //    return;
+       
         if (collision.GetComponent<Hero>().ReturnName() == Rouge.GetComponent<Hero>().ReturnName())
             return;
 
@@ -36,12 +35,17 @@ public class RougeNPC : MonoBehaviour
 
     void SpawnRouge()
     {
+        if(InputManager.Instance.IsSkillOnCD() || InputManager.Instance.IsUltimateOnCD())
+        {
+            return;
+        }
         StartCoroutine(CountDown());
     }
 
     private IEnumerator CountDown()
     {
         tempCollision.GetComponent<Animator>().Play("Base Layer.Die", 0, 0);
+        InputManager.Instance.EnableUI(false);
 
         float AutoTimer = 1f;
         while (AutoTimer > 0)
@@ -54,6 +58,8 @@ public class RougeNPC : MonoBehaviour
         Destroy(tempCollision.gameObject);
         InputManager.Instance.SetBackToNoHero();
         GameObject shadow = Instantiate(Rouge, tempPos, Quaternion.identity);
+
+        InputManager.Instance.EnableUI(true);
 
         GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
         for(int i = 0; i < rooms.Length; i++)

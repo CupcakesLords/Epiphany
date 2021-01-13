@@ -81,7 +81,7 @@ public class Knight : MonoBehaviour, Hero
 
     private IEnumerator SkillTimerCountDown()
     {
-        gameObject.GetComponent<HeroMove>().moveSpeed += 75;
+        gameObject.GetComponent<HeroMove>().moveSpeed += 35;
         float temp = AutoTimer; AutoTimer = 0f;
         SkillTimer = Data.SkillTimer;
         while (SkillTimer > 0)
@@ -91,7 +91,7 @@ public class Knight : MonoBehaviour, Hero
         }
         SkillTimer = 0;
         AutoTimer = temp;
-        gameObject.GetComponent<HeroMove>().moveSpeed -= 75;
+        gameObject.GetComponent<HeroMove>().moveSpeed -= 35;
     }
 
     public void Ultimate() 

@@ -107,6 +107,11 @@ public class InputManager : MonoBehaviour
 
     bool SkillOnCD = false;
 
+    public bool IsSkillOnCD()
+    {
+        return SkillOnCD;
+    }
+
     private IEnumerator SkillTimerCountDown()
     {
         SkillOnCD = true;
@@ -141,6 +146,11 @@ public class InputManager : MonoBehaviour
     }
 
     bool UltimateOnCD = false;
+
+    public bool IsUltimateOnCD()
+    {
+        return UltimateOnCD;
+    }
 
     private IEnumerator UltimateTimerCountDown()
     {
