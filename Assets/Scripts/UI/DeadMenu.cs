@@ -7,7 +7,6 @@ public class DeadMenu : MonoBehaviour
 {
     public Button Revive;
     public GameObject Menu;
-
     //temp
     //public GameObject Level1;
     //public Button Back;
@@ -46,5 +45,11 @@ public class DeadMenu : MonoBehaviour
         }
         SkillTimer = 0;
         Menu.SetActive(true);
+    }
+
+    void QuitGame()
+    {
+        Application.Quit();
+
     }
 }

@@ -564,7 +564,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bio
+  m_Text: Quit
 --- !u!222 &572959317
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -653,6 +653,16 @@ PrefabInstance:
         type: 3}
       propertyPath: Back
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612004312227677561, guid: 0599d7dd635879e468e11b5f4a47386a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612004312227677561, guid: 0599d7dd635879e468e11b5f4a47386a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 5845390760428191806, guid: 0599d7dd635879e468e11b5f4a47386a,
         type: 3}
@@ -1177,7 +1187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 520.3, y: -246}
+  m_AnchoredPosition: {x: 525, y: -129}
   m_SizeDelta: {x: 293.4, y: 96.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1597917016
@@ -1347,7 +1357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1462,7 +1472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 520.3, y: -128}
+  m_AnchoredPosition: {x: 525, y: -249}
   m_SizeDelta: {x: 293.4, y: 96.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105686172
@@ -1655,6 +1665,63 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 276211352}
     m_Modifications:
+    - target: {fileID: 3981462965801657110, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 970fb75df9d65d741b6a65f8fc87cbff,
+        type: 3}
+    - target: {fileID: 3981462965801657110, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981462965843932882, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 401
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981462965843932882, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981462965843932884, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a0fcbf80c6bf00548a506ec005350123,
+        type: 3}
+    - target: {fileID: 3981462965843932884, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981462966595920608, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981462966809780579, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981462967246251231, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981462967261334425, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981462967289427614, guid: 808ce3622e8db514b9793fe85e0ff295,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3981462967311747172, guid: 808ce3622e8db514b9793fe85e0ff295,
         type: 3}
       propertyPath: m_Name

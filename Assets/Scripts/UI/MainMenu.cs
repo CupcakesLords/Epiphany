@@ -21,6 +21,12 @@ public class MainMenu : MonoBehaviour
         Spawn = new Vector3(1.56f, -8.37f, 0);
         StartGame.onClick.AddListener(StartTheGame);
         Settings.onClick.AddListener(ChangeMusic);
+        Bio.onClick.AddListener(QuitGame);
+    }
+    void QuitGame()
+    {
+        Application.Quit();
+
     }
 
     void StartTheGame()

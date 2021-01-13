@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/PC/Desktop/Random3.1.apk
+E:/17CLC3/HK10/Game/Epiphany-apk/epiphany4.apk
 SceneListBegin?
 Assets/Scenes/Scene.unity
 SceneListEnd?
@@ -127,8 +127,6 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 5e5231a774a8bd0f01158633ccb0285d Assembly-CSharp.dll:.Fox
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SiliciterBulletDie
-303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
-7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.AerigelDie
 b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 3bdda101dff6cfc2cdc5a7fcb042e1f9 Assembly-CSharp.dll:.RougeObject
@@ -139,10 +137,10 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 6d5edcb3c8a6d513600e43bdbd9ebaba Assembly-CSharp.dll:.Room
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SiliciterDie
 3bdda101dff6cfc2cdc5a7fcb042e1f9 Assembly-CSharp.dll:.KnightObject
-71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SiliciterWalk
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Explode
+dd13c6258d76e712ebc15509f0314680 Assembly-CSharp.dll:.SoundManager
 08a81c8cf333aff45806f1b35d140d65 Assembly-CSharp.dll:.DialogMenu
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -183,11 +181,13 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 3b760e6526e13f7504f59e210145899a Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.AerigelIdle
 507174d46dacbc5fe45e28485db5dd1e Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
+bfcf1476af81b7496bc002437c68d848 Assembly-CSharp.dll:.Gate
 528e9858840cb8370d93939fff6b42d9 Assembly-CSharp.dll:.JoystickPlayerExample
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 a064ddaf8f981efc803a1fc5f62ef4f0 Assembly-CSharp.dll:.CamController
 4f7daa113c2334387e84d22c51e83240 Assembly-CSharp.dll:.Rouge
 4fccb38d8ef952f1cfc211816fde4cf1 Assembly-CSharp.dll:.CombatMenu
+e6c1f107f046d179de7059d5321f55a3 Assembly-CSharp.dll:.MainMenu
 f09455f3352dd0d16107d009d791d02a Assembly-CSharp.dll:.HeroMove
 ce8738a9c55aaa36e0e53ce1264c19a9 Assembly-CSharp.dll:.HeroHealth
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
@@ -203,6 +203,3 @@ adcda4f136de13df9a82023a2a50f223 Assembly-CSharp.dll:.Siliciter
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RougeDagger
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SiliciterAttack
 270b69eb3006143f2ccc89d669129e45 Assembly-CSharp.dll:.AerigelOrbit
-e6c1f107f046d179de7059d5321f55a3 Assembly-CSharp.dll:.MainMenu
-bfcf1476af81b7496bc002437c68d848 Assembly-CSharp.dll:.Gate
-dd13c6258d76e712ebc15509f0314680 Assembly-CSharp.dll:.SoundManager
