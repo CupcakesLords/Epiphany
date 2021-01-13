@@ -64,6 +64,12 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\FloatingJoystickEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\VariableJoystickEditor.cs" />
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>E:/17CLC3/HK10/Game/Epiphany/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>E:/17CLC3/HK10/Game/Epiphany/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/17CLC3/HK10/Game/Epiphany/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -78,12 +84,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>E:/17CLC3/HK10/Game/Epiphany/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>E:/17CLC3/HK10/Game/Epiphany/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Purchasing">
-      <HintPath>E:/17CLC3/HK10/Game/Epiphany/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.29f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
